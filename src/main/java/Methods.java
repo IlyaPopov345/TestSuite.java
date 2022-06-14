@@ -75,7 +75,7 @@ public class Methods {
         int c = 0;
         int count = 0;
         for (int y = 0; y < mas.length; y++) {
-            if (a.equals(mas[y])) { // mas == arr[0]
+            if (a.equals(mas[y])) {
                 if (c == 0) {
 
                     count++;
@@ -84,4 +84,26 @@ public class Methods {
         }
         return count;
     }
+
+    public static double task6497(int[] mas) {
+
+
+        double sum = 0;
+        double x = 0;
+        double average = 0;
+
+        for (int y = 0; y < mas.length; y++) {
+            sum = sum + mas[y];
+        }
+
+        x = ((sum) / mas.length);
+
+        for (int y = 0; y < mas.length; y++) {
+            average = Math.abs(mas[y] - x);
+
+        }
+        return  average ;
+    }
+
+
 }

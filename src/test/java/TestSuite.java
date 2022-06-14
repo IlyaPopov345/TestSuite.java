@@ -76,4 +76,13 @@ public class TestSuite {
         data = Methods.task4283("q", new String[]{"r","r", "r","r", "r","r",});
         Assert.assertEquals(0, data, 0.0001);
     }
+    @Test
+    public void task6497() {
+        double data;
+     double [] expected = {4.6250 , 3.6250,  4.6250,  3.3750,  3.3750,  0.6250 , 3.3750,  3.3750};
+        data = Methods.task6497(  new int[]{9, 8, 9, 1, 1, 5, 1, 1,});
+    //    Assert.assertArrayEquals
+
+    }
 }
+//new int[]{9, 8, 9, 1, 1, 5, 1, 1,})
