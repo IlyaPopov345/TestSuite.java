@@ -5,7 +5,6 @@ public class Methods {
         System.out.println(" Мы стремимся к " + x);
     }
 
-
     public static void task4140(String x, String y) {
         System.out.println(" Меня зовут  " + x + "," + x + y + ".");
     }
@@ -14,6 +13,17 @@ public class Methods {
         return x + 7;
 
     }
+
+    public static void task4411_2(double x) {
+
+        x = x + 7;
+    }
+
+    public static void task4411_3(Double x) {
+
+        x = x + 7;
+    }
+
 
     public static double task2790(double xDeg) {
         double xRad = (xDeg * Math.PI / 180);
@@ -85,12 +95,12 @@ public class Methods {
         return count;
     }
 
-    public static double task6497(int[] mas) {
+    public static double[] task6497(int[] mas) {
 
 
         double sum = 0;
         double x = 0;
-        double average = 0;
+        double[] average = new double[mas.length];
 
         for (int y = 0; y < mas.length; y++) {
             sum = sum + mas[y];
@@ -99,9 +109,10 @@ public class Methods {
         x = ((sum) / mas.length);
 
         for (int y = 0; y < mas.length; y++) {
-            average = Math.abs(mas[y] - x);
+            average[y] = Math.abs(mas[y] - x);
 
         }
+
         return average;
     }
 
@@ -117,4 +128,50 @@ public class Methods {
         System.out.println("Его дискриминант вычисляется по формуле:" + " d = " + b + "*" + b + " - " + "4" + "*" + a + "*" + c);
 
     }
+
+    public static void task9774(double m, double[] mas) {
+        double x;
+
+        for (int i = 0; i < mas.length; i++) {
+
+            x = mas[i] * m;
+            mas[i] = x;
+        }
+    }
+
+    public static boolean task4847(int a, int b, int c) {
+        if (a < 0) {
+            System.out.println("Значение A должно быть неотрицательным");
+            return false;
+        }
+        if (b < 0) {
+            System.out.println("Значение B должно быть неотрицательным");
+            return false;
+        }
+        if (c < 0) {
+            System.out.println("Значение C должно быть неотрицательным");
+            return false;
+        }
+
+        if (a == b) {
+
+            System.out.println("Треугольник является равнобедренным.");
+            return true;
+        }
+        if (b == c) {
+            System.out.println("Треугольник является равнобедренным.");
+            return true;
+        }
+        if (a == c) {
+            System.out.println("Треугольник является равнобедренным.");
+            return true;
+        } else {
+
+            System.out.println("Треугольник не является равнобедренным.");
+
+            return false;
+        }
+
+    }
 }
+
