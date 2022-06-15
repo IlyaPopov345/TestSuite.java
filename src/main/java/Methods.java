@@ -102,8 +102,19 @@ public class Methods {
             average = Math.abs(mas[y] - x);
 
         }
-        return  average ;
+        return average;
     }
 
+    public static void task2632(int cx, int cy, int r, String fill) {
+        System.out.println(" <circle cx= " + "'" + cx + "'" + " cy= " + "'" + cy + "'"
+                + " r= " + "'" + r + "'" + " fill= " + "'" + fill + "'");
 
+    }
+
+    public static void task7474(int a, int b, int c) {
+
+        System.out.println("Квадратное уравнение " + a + "*" + "x*x" + " + " + b + "*x" + " + " + c + " =  0");
+        System.out.println("Его дискриминант вычисляется по формуле:" + " d = " + b + "*" + b + " - " + "4" + "*" + a + "*" + c);
+
+    }
 }
