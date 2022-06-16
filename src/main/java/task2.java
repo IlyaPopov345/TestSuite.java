@@ -12,7 +12,10 @@ public class task2 {
         double x = 0;
         double sum = 0;
 
-        int[] num = new int[arr.length];
+
+            int[] num = new int[arr.length];
+
+
 
         for (int i = 0; i < num.length; i++) {
             try {
@@ -24,9 +27,9 @@ public class task2 {
             }
             sum = sum + num[i];
         }
-            x = (sum / count);
-            System.out.print(" " + x);
 
+        x = (sum / count);
+        System.out.print(" yt " + x);
 
 
     }
