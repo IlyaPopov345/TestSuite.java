@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.lang.IllegalArgumentException;
+
 public class Methods {
     public static void task1860(String x) {
         System.out.println(" Мы стремимся к " + x);
@@ -173,42 +174,40 @@ public class Methods {
             return false;
         }
     }
-        public static void task9271(double [] mas) {
-            double min;
-            double sub = 0;
 
-            min = mas[0];
+    public static void task9271(double[] mas) {
+        double min;
+        double sub = 0;
 
-            for (int y = 1; y < mas.length; y++) {
-                if (min > mas[y]) {
-                    min = mas[y];
-                }
+        min = mas[0];
+
+        for (int y = 1; y < mas.length; y++) {
+            if (min > mas[y]) {
+                min = mas[y];
             }
-            for (int n = 0; n < mas.length; n++) {
-                sub = mas[n] - min;
-                mas[n]= sub;
+        }
+        for (int n = 0; n < mas.length; n++) {
+            sub = mas[n] - min;
+            mas[n] = sub;
 
-                System.out.print(sub + " ");
-            }
-            System.out.println();
+            System.out.print(sub + " ");
+        }
+        System.out.println();
 
     }
+
     public static double task1934(double a, double b) {
         double result = 0;
 
-try {
-    if (b<=0) {
-        result = a * Math.sqrt(-7 * b);
-        System.out.println(result);
+        if (b <= 0) {
+            result = a * Math.sqrt(-7 * b);
+            System.out.println(result);
+        } else  {
+
+            IllegalArgumentException ex = new IllegalArgumentException ("Подкоренное выражение должно быть неотрицательно");
+            throw  ex;
+        }
+        return result;
     }
 }
-
-        catch (IllegalArgumentException y){
-            System.out.print( "Подкоренное выражение должно быть неотрицательно");
-            }
-
-            // не знаю как сделать  исключение для орицательных чисел
-
-return result;
-}}
 

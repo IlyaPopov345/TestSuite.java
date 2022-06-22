@@ -166,8 +166,8 @@ public class TestSuite {
     @Test
     public void task1934(){
         double data;
-       data = Methods.task1934(6047, 6011);
-        Assert.assertEquals(0, data, 0.0001);
+       data = Methods.task1934(6047, -6011);
+        Assert.assertEquals(1240401.6994881134, data, 0.0001);
     }
 
 }
