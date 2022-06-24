@@ -202,12 +202,46 @@ public class Methods {
         if (b <= 0) {
             result = a * Math.sqrt(-7 * b);
             System.out.println(result);
-        } else  {
+        } else {
 
-            IllegalArgumentException ex = new IllegalArgumentException ("Подкоренное выражение должно быть неотрицательно");
-            throw  ex;
+            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+            throw ex;
         }
         return result;
     }
-}
+
+    public static double task3934(int x, int y) {
+        double result = 0;
+
+        if (y >= 0) {
+            result = -5 * Math.sqrt(x + Math.sqrt(y));
+            System.out.println(result);
+        }
+        if (x >= 0) {
+            result = -5 * Math.sqrt(x + Math.sqrt(y));
+            System.out.println(result);
+        } else if (y < 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+            throw ex;
+        } else if (x < 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+            throw ex;
+        }
+        return result;
+    }
+
+    public static double task9020(int x) {
+
+        double result = 0;
+        result = 3 * Math.sqrt(61 - x);
+        System.out.println(result);
+
+        if (result < 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+            throw ex;
+        }
+            return result;
+        }
+
+    }
 

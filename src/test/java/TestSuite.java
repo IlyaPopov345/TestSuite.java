@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-
+import java.lang.IllegalArgumentException;
 public class TestSuite {
     @Test
     public void task441test() {
@@ -132,42 +132,62 @@ public class TestSuite {
     }
 
     @Test
-    public void task9271(){
-        double [] data = {5, 4, 6, 2, 3, 1};
-       double[] expected = {4, 3, 5, 1, 2, 0};
+    public void task9271() {
+        double[] data = {5, 4, 6, 2, 3, 1};
+        double[] expected = {4, 3, 5, 1, 2, 0};
         Methods.task9271(data);
-        Assert.assertArrayEquals(expected,data, 0.001);
-        double [] x = {1, 2, 3, 4,1, 2};
+        Assert.assertArrayEquals(expected, data, 0.001);
+        double[] x = {1, 2, 3, 4, 1, 2};
         double[] y = {0, 1, 2, 3, 0, 1};
         Methods.task9271(x);
-        Assert.assertArrayEquals(y,x, 0.001);
-        double [] a = {3,4, 1, 2, 3, 4, 1, 2, 3, 1, 2};
-        double[] b = {2,3,0 ,1, 2, 3, 0, 1, 2, 0, 1};
+        Assert.assertArrayEquals(y, x, 0.001);
+        double[] a = {3, 4, 1, 2, 3, 4, 1, 2, 3, 1, 2};
+        double[] b = {2, 3, 0, 1, 2, 3, 0, 1, 2, 0, 1};
         Methods.task9271(a);
-        Assert.assertArrayEquals(b,a, 0.001);
-        double [] d = {4, 2, 3, 4, 3, 2};
+        Assert.assertArrayEquals(b, a, 0.001);
+        double[] d = {4, 2, 3, 4, 3, 2};
         double[] c = {2, 0, 1, 2, 1, 0};
         Methods.task9271(d);
-        Assert.assertArrayEquals(c,d, 0.001);
-        double [] n = {4, 4, 4, 4, 4, 3, 2, 1};
+        Assert.assertArrayEquals(c, d, 0.001);
+        double[] n = {4, 4, 4, 4, 4, 3, 2, 1};
         double[] m = {3, 3, 3, 3, 3, 2, 1, 0};
         Methods.task9271(n);
-        Assert.assertArrayEquals(m,n, 0.001);
-        double [] i= {4, 4, 4, 4};
+        Assert.assertArrayEquals(m, n, 0.001);
+        double[] i = {4, 4, 4, 4};
         double[] o = {0, 0, 0, 0};
         Methods.task9271(i);
-        Assert.assertArrayEquals(o,i, 0.001);
-        double [] p = {4,3};
-        double[] l= {1,0};
+        Assert.assertArrayEquals(o, i, 0.001);
+        double[] p = {4, 3};
+        double[] l = {1, 0};
         Methods.task9271(p);
-        Assert.assertArrayEquals(l,p, 0.001);
+        Assert.assertArrayEquals(l, p, 0.001);
     }
 
     @Test
-    public void task1934(){
+    public void task1934() {
         double data;
-       data = Methods.task1934(6047, -6011);
+        data = Methods.task1934(6047, -6011);
         Assert.assertEquals(1240401.6994881134, data, 0.0001);
     }
 
+    @Test
+    public void task9020() {
+        double data;
+        data = Methods.task9020(0);
+        Assert.assertEquals(23.4307, data, 0.0001);
+        data = Methods.task9020(-9);
+        Assert.assertEquals(25.0998, data, 0.0001);
+        data = Methods.task9020(61);
+        Assert.assertEquals(0, data, 0.0001);
+        data = Methods.task9020(60);
+        Assert.assertEquals(3, data, 0.0001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task9020assertion1() {
+         Methods.task9020(62);
+
+    }
+
 }
+
