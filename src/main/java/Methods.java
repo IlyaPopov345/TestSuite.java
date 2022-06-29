@@ -212,7 +212,7 @@ public class Methods {
 
     public static double task3934(int x, int y) {
         double result = 0;
-
+// добавить ифы в начлао
         if (y >= 0) {
             result = -5 * Math.sqrt(x + Math.sqrt(y));
             System.out.println(result);
