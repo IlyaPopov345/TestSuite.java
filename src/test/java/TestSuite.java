@@ -185,9 +185,25 @@ public class TestSuite {
 
     @Test(expected = IllegalArgumentException.class)
     public void task9020assertion1() {
-         Methods.task9020(62);
+        Methods.task9020(62);
 
     }
 
+    @Test
+    public void task5871() {
+        double data;
+        data = Methods.task5871(5);
+        Assert.assertEquals(0.707107, data, 0.0001);
+        data = Methods.task5871(6);
+        Assert.assertEquals(0.881127, data, 0.0001);
+        data = Methods.task5871(6911);
+        Assert.assertEquals(1, data, 0.0001);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task5871assertion1() {
+        Methods.task5871(0);
+    }
 }
 

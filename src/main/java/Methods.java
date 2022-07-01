@@ -211,37 +211,49 @@ public class Methods {
     }
 
     public static double task3934(int x, int y) {
-        double result = 0;
-// добавить ифы в начлао
-        if (y >= 0) {
-            result = -5 * Math.sqrt(x + Math.sqrt(y));
-            System.out.println(result);
+        double result;
+
+        result = (-5 * Math.sqrt(x + Math.sqrt(y)));
+
+        if (Double.isNaN(result)) {
+            IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
+            throw ui;
+
         }
-        if (x >= 0) {
-            result = -5 * Math.sqrt(x + Math.sqrt(y));
-            System.out.println(result);
-        } else if (y < 0) {
-            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
-            throw ex;
-        } else if (x < 0) {
-            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
-            throw ex;
-        }
+
+
         return result;
     }
 
     public static double task9020(int x) {
 
-        double result = 0;
+        double result;
         result = 3 * Math.sqrt(61 - x);
-        System.out.println(result);
 
-        if (result < 0) {
+        if (Double.isNaN(result)) {
             IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+
             throw ex;
         }
-            return result;
+        return result;
+    }
+
+
+    public static double task5871(int x) {
+        double result;
+        result = (Math.sqrt(x + 5) + Math.sqrt(x - 5)) / (2 * Math.sqrt(x));
+        if (Double.isNaN(result)) {
+            IllegalArgumentException ex = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно");
+
+            throw ex;
         }
 
+
+        return result;
     }
+}
+
+
+
+
 
