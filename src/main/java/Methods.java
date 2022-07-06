@@ -213,14 +213,19 @@ public class Methods {
     public static double task3934(int x, int y) {
         double result;
 
-        result = (-5 * Math.sqrt(x + Math.sqrt(y)));
+        if (y < 0) {
+            IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
+            throw ui;
 
-        if (Double.isNaN(result)) {
+        }
+        if ((x + Math.sqrt(y) < 0)) {
+
             IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
             throw ui;
 
         }
 
+        result = (-5 * Math.sqrt(x + Math.sqrt(y)));
 
         return result;
     }
@@ -251,6 +256,17 @@ public class Methods {
 
         return result;
     }
+
+    public static void task7891(int[] mas) {
+        int sum;
+        int[] mas2 = new int[]{};
+
+        sum = mas[0] + mas[1];
+        mas2[2] = sum;
+
+    }
+
+
 }
 
 
