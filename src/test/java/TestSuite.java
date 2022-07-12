@@ -1,16 +1,20 @@
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.lang.IllegalArgumentException;
+
+import static org.junit.Assert.assertEquals;
+
 public class TestSuite {
     @Test
     public void task441test() {
         double actual;
         actual = Methods.task4411(11.13);
-        Assert.assertEquals(18.1300, actual, 0.0001);
+        assertEquals(18.1300, actual, 0.0001);
         actual = Methods.task4411(-7919);
-        Assert.assertEquals(-7912, actual, 0.0001);
+        assertEquals(-7912, actual, 0.0001);
         actual = Methods.task4411(0);
-        Assert.assertEquals(7.0000, actual, 0.0001);
+        assertEquals(7.0000, actual, 0.0001);
 
     }
 
@@ -18,7 +22,7 @@ public class TestSuite {
     public void task2790test() {
         double actual;
         actual = Methods.task2790(6997);
-        Assert.assertEquals(0.9205, actual, 0.0001);
+        assertEquals(0.9205, actual, 0.0001);
 
     }
 
@@ -34,32 +38,32 @@ public class TestSuite {
     public void task5662() {
         double data;
         data = Methods.task5662(1, 2, 3);
-        Assert.assertEquals(-8, data, 0.0001);
+        assertEquals(-8, data, 0.0001);
         data = Methods.task5662(11, 13, 19);
-        Assert.assertEquals(-667, data, 0.0001);
+        assertEquals(-667, data, 0.0001);
         data = Methods.task5662(3, 17, 5);
-        Assert.assertEquals(229, data, 0.0001);
+        assertEquals(229, data, 0.0001);
         data = Methods.task5662(0, 7, 13);
-        Assert.assertEquals(0, data, 0.0001);
+        assertEquals(0, data, 0.0001);
         data = Methods.task5662(1, 2, 1);
-        Assert.assertEquals(0.0, data, 0.0001);
+        assertEquals(0.0, data, 0.0001);
     }
 
     @Test
     public void task3669() {
         double data;
         data = Methods.task3669(8, 13);
-        Assert.assertEquals(1235520, data, 0.0001);
+        assertEquals(1235520, data, 0.0001);
         data = Methods.task3669(13, 8);
-        Assert.assertEquals(1235520, data, 0.0001);
+        assertEquals(1235520, data, 0.0001);
         data = Methods.task3669(159, 161);
-        Assert.assertEquals(4095840, data, 0.0001);
+        assertEquals(4095840, data, 0.0001);
         data = Methods.task3669(648, 648);
-        Assert.assertEquals(648, data, 0.0001);
+        assertEquals(648, data, 0.0001);
         data = Methods.task3669(-2, 600);
-        Assert.assertEquals(0, data, 0.0001);
+        assertEquals(0, data, 0.0001);
         data = Methods.task3669(35, 24);
-        Assert.assertEquals(399703747322880000l, data, 0.0001);
+        assertEquals(399703747322880000l, data, 0.0001);
 
 
     }
@@ -68,13 +72,13 @@ public class TestSuite {
     public void task4283() {
         double data;
         data = Methods.task4283("e", new String[]{"q", "w", "e", "r", "q", "w",});
-        Assert.assertEquals(1, data, 0.0001);
+        assertEquals(1, data, 0.0001);
         data = Methods.task4283("t", new String[]{"q", "w", "e", "r", "q", "w", "e", "r", "q", "w", "e"});
-        Assert.assertEquals(0, data, 0.0001);
+        assertEquals(0, data, 0.0001);
         data = Methods.task4283("w", new String[]{"e", "w", "w", "w", "w", "w",});
-        Assert.assertEquals(5, data, 0.0001);
+        assertEquals(5, data, 0.0001);
         data = Methods.task4283("q", new String[]{"r", "r", "r", "r", "r", "r",});
-        Assert.assertEquals(0, data, 0.0001);
+        assertEquals(0, data, 0.0001);
     }
 
     @Test
@@ -100,14 +104,14 @@ public class TestSuite {
     public void task4411_2() {
         double y = 11.13;
         Methods.task4411_2(y);
-        Assert.assertEquals(18.1300, y, 0.0001);
+        assertEquals(18.1300, y, 0.0001);
     }
 
     @Test
     public void task4411_3() {
         Double y = new Double(11.13);
         Methods.task4411_3(y);
-        Assert.assertEquals(18.1300, y, 0.0001);
+        assertEquals(18.1300, y, 0.0001);
     }
 
     @Test
@@ -167,20 +171,20 @@ public class TestSuite {
     public void task1934() {
         double data;
         data = Methods.task1934(6047, -6011);
-        Assert.assertEquals(1240401.6994881134, data, 0.0001);
+        assertEquals(1240401.6994881134, data, 0.0001);
     }
 
     @Test
     public void task9020() {
         double data;
         data = Methods.task9020(0);
-        Assert.assertEquals(23.4307, data, 0.0001);
+        assertEquals(23.4307, data, 0.0001);
         data = Methods.task9020(-9);
-        Assert.assertEquals(25.0998, data, 0.0001);
+        assertEquals(25.0998, data, 0.0001);
         data = Methods.task9020(61);
-        Assert.assertEquals(0, data, 0.0001);
+        assertEquals(0, data, 0.0001);
         data = Methods.task9020(60);
-        Assert.assertEquals(3, data, 0.0001);
+        assertEquals(3, data, 0.0001);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -193,11 +197,11 @@ public class TestSuite {
     public void task5871() {
         double data;
         data = Methods.task5871(5);
-        Assert.assertEquals(0.707107, data, 0.0001);
+        assertEquals(0.707107, data, 0.0001);
         data = Methods.task5871(6);
-        Assert.assertEquals(0.881127, data, 0.0001);
+        assertEquals(0.881127, data, 0.0001);
         data = Methods.task5871(6911);
-        Assert.assertEquals(1, data, 0.0001);
+        assertEquals(1, data, 0.0001);
 
     }
 
@@ -205,5 +209,75 @@ public class TestSuite {
     public void task5871assertion1() {
         Methods.task5871(0);
     }
-}
 
+    @Test
+    public void task7799() {
+        double data;
+        data = Methods.task7799(5, 45);
+        assertEquals(34.671920, data, 0.0001);
+        data = Methods.task7799(7297, 30);
+        assertEquals(61972.336135, data, 0.0001);
+        data = Methods.task7799(10, 90);
+        assertEquals(0, data, 0.0001);
+        data = Methods.task7799(7, 91);
+        assertEquals(0, data, 0.0001);
+        data = Methods.task7799(9, 100);
+        assertEquals(0, data, 0.0001);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task7799assertion1() {
+        Methods.task7799(0, 30);
+        Methods.task7799(-10, 5);
+    }
+
+    @Test
+    public void task9354() {
+        double data;
+        data = Methods.task9354(7, 1, 3);
+        assertEquals(-83.0000, data, 0.0001);
+        data = Methods.task9354(7247, 7243, 7229);
+        assertEquals(-157093203.0000, data, 0.0001);
+        data = Methods.task9354(-11, -13, -17);
+        assertEquals(-579.0000, data, 0.0001);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task9354assertion1() {
+        Methods.task9354(0, 1, 3);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task9354assertion2() {
+        Methods.task9354(0, 1000, 2000);
+    }
+
+
+    @Test
+    public void task5170() {
+        double data;
+        data = Methods.task5170(6);
+        assertEquals(4, data, 0.0001);
+        data = Methods.task5170(3219);
+        assertEquals(8, data, 0.0001);
+        data = Methods.task5170(7);
+        assertEquals(2, data, 0.0001);
+        data = Methods.task5170(2017);
+        assertEquals(2, data, 0.0001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task5170assertion1() {Methods.task5170(1);}
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task5170assertion2() {
+        Methods.task5170(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void task5170assertion3() {
+        Methods.task5170(-10);
+    }
+}
