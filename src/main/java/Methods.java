@@ -213,19 +213,14 @@ public class Methods {
     public static double task3934(int x, int y) {
         double result;
 
-        if (y < 0) {
-            IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
-            throw ui;
-
-        }
-        if ((x + Math.sqrt(y) < 0)) {
-
-            IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
-            throw ui;
-
-        }
-
         result = (-5 * Math.sqrt(x + Math.sqrt(y)));
+
+        if (Double.isNaN(result)) {
+            IllegalArgumentException ui = new IllegalArgumentException("Подкоренное выражение должно быть неотрицательно3");
+            throw ui;
+
+        }
+
 
         return result;
     }
@@ -252,24 +247,66 @@ public class Methods {
 
             throw ex;
         }
+        return result;
+    }
 
+
+    public static double task7799(int mass, int aDeg) {
+        double result;
+        double aRad;
+        if (mass <= 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Масса должна быть положительной");
+            throw ex;
+
+        } else {
+            aRad = aDeg * Math.PI / 180;
+            result = mass * 9.8067 * Math.cos(aRad);
+        }
+        if (result < 0) {
+            return 0;
+
+        }
 
         return result;
     }
 
-    public static void task7891(int[] mas) {
-        int sum;
-        int[] mas2 = new int[]{};
+    public static double task9354(int a, int b, int c) {
+        double result;
+        int k = 2;
 
-        sum = mas[0] + mas[1];
-        mas2[2] = sum;
+        if (a == 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Уравнение y =" + a + "x^2" + "+" + b + "x" + c + " не является квадратным ");
+            throw ex;
+        } else {
+            result = (Math.pow(b, k)) - 4 * a * c;
+        }
+        return result;
+    }
+
+    public static int task5170(int y) {
+        int result;
+        int count = 0;
+        if (y <= 1) {
+            IllegalArgumentException ex = new IllegalArgumentException("Простое число должно быть больше 1 ");
+            throw ex;
+        }
+        for (int i = 1; i <= y; i++) {
+            if ((y % i) == 0) {
+                count++;
+            }
+        }
+        if (count > 2) {
+            System.out.println(" Число " + y + " без остатка делится на " + count + " других чисел. Число составное ");
+        } else if (count <= 2) {
+            System.out.println(" Число " + y + " без остатка делится на " + count + " других чисел. Число простое ");
+        }
+        result = count;
+
+        return result;
+
 
     }
 
-
 }
-
-
-
 
 
