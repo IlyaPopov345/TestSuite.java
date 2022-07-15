@@ -1,44 +1,34 @@
 import java.lang.IllegalArgumentException;
+
 public class Range {
     public static boolean hasIntersection(int redA, int redB, int greenA, int greenB) {
 
 
-        if (redA > redB) {
 
-            IllegalArgumentException ex = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
-            throw ex;
+        if(redB < greenA) {
+
+            System.out.println("Интервалы не пересекаются. Правый край красного левее левого края зеленого.");
+            return false;
         }
-        if (greenA > greenB) {
+
+        if (redA < greenB && redB > greenA) {
+
+            System.out.println("Интервалы пересекаются");
+
+        }
+       if ( greenB<redA) {
+            System.out.println("не пересекаются. Правый край зеленого левее левого края красного");
+            return false;
+        }
+
+        if (redA > redB ) {
             IllegalArgumentException x = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
             throw x;
         }
-
-
-        if (redA < greenB) {
-
-            System.out.println("Интервалы пересекаются");
-
+        if (greenA > greenB ) {
+            IllegalArgumentException r = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
+            throw r;
         }
-        if (redB < greenA) {
-
-            System.out.println("Интервалы не пересекаются. Правый край красного левее левого края зеленого.");
-            return false;
-        }
-
-
-        if (greenA < redB) {
-
-            System.out.println("Интервалы пересекаются");
-
-        }
-
-        if (greenB < redA) {
-
-            System.out.println("Интервалы не пересекаются. Правый край красного левее левого края зеленого.");
-            return false;
-        }
-
-
 
         return true;
     }

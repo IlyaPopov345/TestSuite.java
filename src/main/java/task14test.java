@@ -18,12 +18,12 @@ public class task14test {
         }
         sum = num[0] + num[1];
 
-
         num2[2] = sum;
 
         //9,8,7,6,5,4
 
-        for (int y = 0; y < num.length; y++) {
+        for (int y = 0; y < num2.length; y++) {
+            num2 = num;
             System.out.print(num2[y] + " ");
         }
 
