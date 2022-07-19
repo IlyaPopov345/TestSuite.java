@@ -304,9 +304,14 @@ public class Methods {
 
         return result;
 
-
     }
+    }
+/*
+ public static  Direction backwardTask(Point x , Point y){
 
-}
+}}
+*/
+
+
 
 
