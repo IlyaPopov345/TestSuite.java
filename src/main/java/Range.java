@@ -4,6 +4,15 @@ public class Range {
     public static boolean hasIntersection(int redA, int redB, int greenA, int greenB) {
 
 
+        if (redA > redB ) {
+            IllegalArgumentException x = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
+            throw x;
+        }
+        if (greenA > greenB ) {
+            IllegalArgumentException r = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
+            throw r;
+        }
+
 
         if(redB < greenA) {
 
@@ -21,14 +30,6 @@ public class Range {
             return false;
         }
 
-        if (redA > redB ) {
-            IllegalArgumentException x = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
-            throw x;
-        }
-        if (greenA > greenB ) {
-            IllegalArgumentException r = new IllegalArgumentException("Некорректный интервал. Левая граница должна быть меньше правой.");
-            throw r;
-        }
 
         return true;
     }
