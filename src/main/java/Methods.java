@@ -316,45 +316,70 @@ public class Methods {
         x1 = b.x - a.x;
         y1 = b.y - a.y;
         r = Math.abs(Math.atan(y1 / x1));
-        k = r*180/Math.PI;
+        k = r * 180 / Math.PI;
         Direction t;
         t = new Direction();
 
 
         if (x1 >= 0 & y1 > 0) {
             t.angle = k;
-            t.distance = Point.distanceBetween(a,b);
+            t.distance = Point.distanceBetween(a, b);
 
             System.out.println("Угол в 1 четверти");
-            System.out.println("Горизонтальное проложение"+t.distance);
+            System.out.println("Горизонтальное проложение" + t.distance);
             System.out.println("Дирекционный угол" + t.angle);
         }
         if (x1 < 0 & y1 >= 0) {
             t.angle = 180 - k;
-            t.distance = Point.distanceBetween(a,b);
-            System.out.println("Угол в 2 четверти"+t.distance);
+            t.distance = Point.distanceBetween(a, b);
+            System.out.println("Угол в 2 четверти" + t.distance);
             System.out.println("Горизонтальное проложение");
             System.out.println("Дирекционный угол" + t.angle);
         }
         if (x1 <= 0 & y1 < 0) {
             t.angle = 180 + k;
-            t.distance = Point.distanceBetween(a,b);
+            t.distance = Point.distanceBetween(a, b);
             System.out.println("Угол в 3 четверти");
-            System.out.println("Горизонтальное проложение"+t.distance);
+            System.out.println("Горизонтальное проложение" + t.distance);
             System.out.println("Дирекционный угол" + t.angle);
         }
 
         if (x1 > 0 & y1 <= 0) {
             t.angle = 360 - k;
-            t.distance = Point.distanceBetween(a,b);
+            t.distance = Point.distanceBetween(a, b);
             System.out.println("Угол в 4 четверти");
-            System.out.println("Горизонтальное проложение"+t.distance);
+            System.out.println("Горизонтальное проложение" + t.distance);
             System.out.println("Дирекционный угол" + t.angle);
         }
 
 
         return t;
     }
+
+    public static Point  forwardTask(Point xa, Direction ya) {
+
+        double x1;
+        double y1;
+        double dx;
+        double dy;
+        double xb;
+        double yb;
+        Direction d;
+        d = new Direction();
+
+        x1 = d.distance * Math.cos(d.angle);
+        dx = x1 * 180 / Math.PI;
+        y1 = d.distance * Math.sin(d.angle);
+        dy = y1 * 180 / Math.PI;
+        xb = xa.x + dx;
+        yb = ya.distance + dy;
+
+        System.out.println("Приращение координат:" + " Δx = " + dx + ";" + " Δy = " + dy);
+        System.out.println("Координаты второй точки" + "(" + xb + ";" + yb + ")");
+        return xa;
+    }
+
+
 }
 
 
