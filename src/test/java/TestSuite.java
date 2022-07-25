@@ -269,7 +269,9 @@ public class TestSuite {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void task5170assertion1() {Methods.task5170(1);}
+    public void task5170assertion1() {
+        Methods.task5170(1);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void task5170assertion2() {
@@ -279,5 +281,13 @@ public class TestSuite {
     @Test(expected = IllegalArgumentException.class)
     public void task5170assertion3() {
         Methods.task5170(-10);
+    }
+
+    @Test
+    public void mixLiquids() {
+        double data;
+      //  data = Methods.mixLiquids(4,22.5000);
+     //   assertEquals(22.5000 , data, 0.0001);
+
     }
 }

@@ -356,7 +356,7 @@ public class Methods {
         return t;
     }
 
-    public static Point  forwardTask(Point xa, Direction ya) {
+    public static Point forwardTask(Point xa, Direction ya) {
 
         double x1;
         double y1;
@@ -379,6 +379,24 @@ public class Methods {
         return xa;
     }
 
+    public static LiquidPortion mixLiquids(LiquidPortion volume, LiquidPortion temperature) {
+
+        double volume1 = 1, volume2 = 3, temperature1 = 30, temperature2 = 20;
+        LiquidPortion temperature5;
+        LiquidPortion  volume5;
+        temperature5 = new LiquidPortion();
+        volume5 = new LiquidPortion();
+
+        volume5.volume = volume1 + volume2;
+        System.out.println("Объем смеси:" + volume.volume + "L");
+
+
+        temperature5.temperature = temperature1 * volume1 + temperature2 * volume2 / volume1 + volume2;
+        System.out.println("Температура смеси:" + temperature.temperature + "℃");
+
+
+        return volume5;
+    }
 
 }
 
