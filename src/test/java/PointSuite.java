@@ -42,5 +42,24 @@ public class PointSuite {
         Assert.assertEquals(12.3693, actual, 0.0001);
     }
 
+    @Test
+    public void distanceToValuesTest() {
+        Point src;
+        src = new Point(1, 1);
+        double actual = src.distanceTo(3, 4);
+        Assert.assertEquals(3.6056, actual, 0.0001);
 
+
+    }
+
+    @Test
+    public void distanceToPointTest() {
+
+        Point src, dest;
+        src = new Point(-2, 4);
+        dest = new Point(8, -10);
+        double actual = src.distanceTo(dest);
+        Assert.assertEquals(17.2046, actual, 0.0001);
+
+    }
 }
