@@ -356,46 +356,45 @@ public class Methods {
         return t;
     }
 
-    public static Point forwardTask(Point xa, Direction ya) {
-
+    public static Point forwardTask(Point a, Direction d) {
+        Point f;
+        f = new Point(1, 1);
         double x1;
         double y1;
-        double dx;
-        double dy;
-        double xb;
-        double yb;
-        Direction d;
-        d = new Direction();
+        double angle;
 
-        x1 = d.distance * Math.cos(d.angle);
-        dx = x1 * 180 / Math.PI;
-        y1 = d.distance * Math.sin(d.angle);
-        dy = y1 * 180 / Math.PI;
-        xb = xa.x + dx;
-        yb = ya.distance + dy;
+        if (d.distance <= 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Горизонтальное проложение линии должно быть положительно ");
+            throw ex;
+        }
+        if (d.angle < 0) {
+            IllegalArgumentException ex = new IllegalArgumentException("Угол должен быть неотрицательным ");
+            throw ex;
+        }
+        angle = d.angle * Math.PI / 180;
+        x1 = d.distance * Math.cos(angle);
+        y1 = d.distance * Math.sin(angle);
+        f.x = a.x + x1;
+        f.y = a.y + y1;
 
-        System.out.println("Приращение координат:" + " Δx = " + dx + ";" + " Δy = " + dy);
-        System.out.println("Координаты второй точки" + "(" + xb + ";" + yb + ")");
-        return xa;
+        System.out.println("Приращение координат:" + " Δx = " + x1 + ";" + " Δy = " + y1);
+        System.out.println("Координаты второй точки" + "(" + f.x + ";" + f.y + ")");
+        return f;
     }
 
-    public static LiquidPortion mixLiquids(LiquidPortion volume, LiquidPortion temperature) {
+    public static LiquidPortion mixLiquids(LiquidPortion first , LiquidPortion second) {
 
-        double volume1 = 1, volume2 = 3, temperature1 = 30, temperature2 = 20;
-        LiquidPortion temperature5;
-        LiquidPortion  volume5;
-        temperature5 = new LiquidPortion();
-        volume5 = new LiquidPortion();
+        LiquidPortion x;
+       x = new LiquidPortion();
 
-        volume5.volume = volume1 + volume2;
-        System.out.println("Объем смеси:" + volume.volume + "L");
+        x.volume = first.volume + second.volume;
+        System.out.println("Объем смеси:" + x.volume+ "L");
 
-
-        temperature5.temperature = temperature1 * volume1 + temperature2 * volume2 / volume1 + volume2;
-        System.out.println("Температура смеси:" + temperature.temperature + "℃");
+        x.temperature = (first.temperature * first.volume + second.temperature * second.volume) / (first.volume + second.volume);
+        System.out.println("Температура смеси:" + x.temperature + "℃");
 
 
-        return volume5;
+        return x;
     }
 
 }

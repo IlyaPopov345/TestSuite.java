@@ -285,9 +285,16 @@ public class TestSuite {
 
     @Test
     public void mixLiquids() {
-        double data;
-      //  data = Methods.mixLiquids(4,22.5000);
-     //   assertEquals(22.5000 , data, 0.0001);
 
+        LiquidPortion first , second,data;
+        first = new  LiquidPortion();
+        second= new  LiquidPortion();
+        first.volume = 1;
+        first.temperature =30;
+        second.volume =3;
+        second.temperature = 20;
+        data = Methods.mixLiquids(first,second );
+        Assert.assertEquals(22.5,data.temperature , 0.0001);
+        Assert.assertEquals(4,data.volume , 0.0001);
     }
 }
