@@ -286,15 +286,118 @@ public class TestSuite {
     @Test
     public void mixLiquids() {
 
-        LiquidPortion first , second,data;
-        first = new  LiquidPortion();
-        second= new  LiquidPortion();
+        LiquidPortion first, second, data;
+        first = new LiquidPortion();
+        second = new LiquidPortion();
         first.volume = 1;
-        first.temperature =30;
-        second.volume =3;
+        first.temperature = 30;
+        second.volume = 3;
         second.temperature = 20;
-        data = Methods.mixLiquids(first,second );
-        Assert.assertEquals(22.5,data.temperature , 0.0001);
-        Assert.assertEquals(4,data.volume , 0.0001);
+        data = Methods.mixLiquids(first, second);
+        Assert.assertEquals(22.5, data.temperature, 0.0001);
+        Assert.assertEquals(4, data.volume, 0.0001);
+    }
+
+    @Test
+    public void FindResultant() {
+
+        Force first, second, data;
+        first = new Force();
+        second = new Force();
+        first.x = -50;
+        second.x = 60;
+        first.y = -86.6025;
+        second.y = 0;
+        first.volume = 100;
+        second.volume = 100;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(10, data.x, 0.0001);
+        Assert.assertEquals(-86.6025, data.y, 0.0001);
+        Assert.assertEquals(100, data.volume, 0.0001);
+
+
+        first.x = 10;
+        second.x = 0;
+        first.y = 0;
+        second.y = 10;
+        first.volume = 40;
+        second.volume = 30;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(10, data.x, 0.0001);
+        Assert.assertEquals(10, data.y, 0.0001);
+        Assert.assertEquals(50, data.volume, 0.0001);
+
+        first.x = 11;
+        second.x = 7;
+        first.y = 13;
+        second.y = 17;
+        first.volume = 50;
+        second.volume = 30;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(18, data.x, 0.0001);
+        Assert.assertEquals(30, data.y, 0.0001);
+        Assert.assertEquals(79.0916, data.volume, 0.0001);
+
+        first.x = -70.7106;
+        second.x = 60;
+        first.y = 50;
+        second.y = 0;
+        first.volume = 100;
+        second.volume = 100;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(-10.7106, data.x, 0.0001);
+        Assert.assertEquals(50, data.y, 0.0001);
+        Assert.assertEquals(60.5811, data.volume, 0.0001);
+
+        first.x = -86.6025;
+        second.x = 60;
+        first.y = 50;
+        second.y = 0;
+        first.volume = 100;
+        second.volume = 100;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(-26.6025, data.x, 0.0001);
+        Assert.assertEquals(50, data.y, 0.0001);
+        Assert.assertEquals(51.7638, data.volume, 0.0001);
+
+
+        first.x = 3;
+        second.x = 4;
+        first.y = 4;
+        second.y = 3;
+        first.volume = 1;
+        second.volume = 1;
+        data = Force.FindResultant(first, second);
+        Assert.assertEquals(7, data.x, 0.0001);
+        Assert.assertEquals(7, data.y, 0.0001);
+        Assert.assertEquals(1.9799, data.volume, 0.0001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void FindResultant2() {
+        Force first, second, data;
+        first = new Force();
+        second = new Force();
+        first.x = 5;
+        second.x = 4;
+        first.y = 7;
+        second.y = 3;
+        first.volume = 11;
+        second.volume = -20;
+        data = Force.FindResultant(first, second);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void FindResultant3() {
+        Force first, second, data;
+        first = new Force();
+        second = new Force();
+        first.x = 15;
+        second.x = 19;
+        first.y = 17;
+        second.y = 13;
+        first.volume = -4;
+        second.volume = 5;
+        data = Force.FindResultant(first, second);
     }
 }
