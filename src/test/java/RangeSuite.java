@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.lang.IllegalArgumentException;
+
 public class RangeSuite {
     @Test
     public void hasIntersectionIntsTest() {
@@ -20,13 +22,22 @@ public class RangeSuite {
         Assert.assertFalse(data);
 
     }
+
     @Test(expected = IllegalArgumentException.class)
-    public void hasIntersectionIntsWrongRedTest () {
+    public void hasIntersectionIntsWrongRedTest() {
         Range.hasIntersection(79, 73, 83, 89);
     }
+
     @Test(expected = IllegalArgumentException.class)
-    public void hasIntersectionIntsWrongGreenTest () {
-        Range.hasIntersection( 97, 101, 107, 103);
+    public void hasIntersectionIntsWrongGreenTest() {
+        Range.hasIntersection(97, 101, 107, 103);
     }
 
+    @Test
+    public void hasIntersectionRangesTest() {
+        Range left, right;
+
+
+
+    }
 }

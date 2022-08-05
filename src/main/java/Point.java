@@ -2,6 +2,12 @@ public class Point {
     double x;
     double y;
 
+
+    public  static void setCoordinates (double a,double b){
+    }
+
+
+
     public Point(double px, double py) {
         x = px;
         y = py;
