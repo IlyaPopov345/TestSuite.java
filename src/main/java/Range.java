@@ -66,4 +66,9 @@ public class Range {
         return true;
     }
 
+    public boolean intersects(int a, int b) {
+        boolean result;
+        result = Range.hasIntersection(this.from, this.to, a, b);
+        return result;
+    }
 }

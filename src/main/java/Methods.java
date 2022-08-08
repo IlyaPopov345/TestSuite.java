@@ -313,8 +313,8 @@ public class Methods {
         double k;
 
 
-        x1 = b.x - a.x;
-        y1 = b.y - a.y;
+        x1 = b.getX() - a.getX();
+        y1 = b.getY() - a.getY();
         r = Math.abs(Math.atan(y1 / x1));
         k = r * 180 / Math.PI;
         Direction t;
@@ -357,8 +357,7 @@ public class Methods {
     }
 
     public static Point forwardTask(Point a, Direction d) {
-        Point f;
-        f = new Point(1, 1);
+
         double x1;
         double y1;
         double angle;
@@ -374,11 +373,12 @@ public class Methods {
         angle = d.angle * Math.PI / 180;
         x1 = d.distance * Math.cos(angle);
         y1 = d.distance * Math.sin(angle);
-        f.x = a.x + x1;
-        f.y = a.y + y1;
+        Point f;
+        f = new Point(a.getX() + x1, a.getY() + y1);
+
 
         System.out.println("Приращение координат:" + " Δx = " + x1 + ";" + " Δy = " + y1);
-        System.out.println("Координаты второй точки" + "(" + f.x + ";" + f.y + ")");
+        System.out.println("Координаты второй точки" + "(" + f.getX() + ";" + f.getY() + ")");
         return f;
     }
 

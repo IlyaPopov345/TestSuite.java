@@ -28,16 +28,53 @@ public class RangeSuite {
         Range.hasIntersection(79, 73, 83, 89);
     }
 
+
     @Test(expected = IllegalArgumentException.class)
     public void hasIntersectionIntsWrongGreenTest() {
         Range.hasIntersection(97, 101, 107, 103);
     }
 
+
+
     @Test
-    public void hasIntersectionRangesTest() {
-        Range left, right;
+    public void intersectsIntsTest1() {
+        boolean data;
+        Range left;
+        left = new Range();
+        left.from = 11;
+        left.to = 17;
+        data = left.intersects(13, 19);
+        Assert.assertTrue(data);
+        left.from = 23;
+        left.to = 37;
+        data = left.intersects(29, 31);
+        Assert.assertTrue(data);
+        left.from = 43;
+        left.to = 53;
+        data = left.intersects(41, 47);
+        Assert.assertTrue(data);
+        left.from = 5;
+        left.to = 15;
+        data = left.intersects(0, 30);
+        Assert.assertTrue(data);
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void intersectsIntWrongRightTest2() {
+        {
+            Range.hasIntersection(79, 73, 83, 89);
+        }
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void hasIntersectionIntsWrongGreenTest3() {
+        Range.hasIntersection(97, 101, 107, 103);
 
     }
 }
+
+
+
+
+
+

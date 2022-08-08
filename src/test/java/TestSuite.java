@@ -302,26 +302,15 @@ public class TestSuite {
     public void FindResultant() {
 
         Force first, second, data;
-        first = new Force();
-        second = new Force();
-        first.x = -50;
-        second.x = 60;
-        first.y = -86.6025;
-        second.y = 0;
-        first.volume = 100;
-        second.volume = 100;
+        first = new Force(-50, -86.6025, 100);
+        second = new Force(60, 0, 100);
         data = Force.FindResultant(first, second);
         Assert.assertEquals(10, data.x, 0.0001);
         Assert.assertEquals(-86.6025, data.y, 0.0001);
         Assert.assertEquals(100, data.volume, 0.0001);
 
-
-        first.x = 10;
-        second.x = 0;
-        first.y = 0;
-        second.y = 10;
-        first.volume = 40;
-        second.volume = 30;
+        first = new Force(10, 0, 40);
+        second = new Force(0, 10, 30);
         data = Force.FindResultant(first, second);
         Assert.assertEquals(10, data.x, 0.0001);
         Assert.assertEquals(10, data.y, 0.0001);
@@ -376,28 +365,20 @@ public class TestSuite {
     @Test(expected = IllegalArgumentException.class)
     public void FindResultant2() {
         Force first, second, data;
-        first = new Force();
-        second = new Force();
-        first.x = 5;
-        second.x = 4;
-        first.y = 7;
-        second.y = 3;
-        first.volume = 11;
-        second.volume = -20;
+        first = new Force(5, 7, 11);
+        second = new Force(4, 3, -20);
+
         data = Force.FindResultant(first, second);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void FindResultant3() {
         Force first, second, data;
-        first = new Force();
-        second = new Force();
-        first.x = 15;
-        second.x = 19;
-        first.y = 17;
-        second.y = 13;
-        first.volume = -4;
-        second.volume = 5;
+        first = new Force(15, 17, -4);
+        second = new Force(19, 13, 5);
+
+
         data = Force.FindResultant(first, second);
     }
 }
+

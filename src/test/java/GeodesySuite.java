@@ -73,64 +73,64 @@ public class GeodesySuite {
         direction.angle = 30;
         srs = new Point(1, 1);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(5.3301, dest.x, 0.0001);
-        Assert.assertEquals(3.5000, dest.y, 0.0001);
+        Assert.assertEquals(5.3301, dest.getX(), 0.0001);
+        Assert.assertEquals(3.5000, dest.getY(), 0.0001);
 
         direction.distance = 13;
         direction.angle = 110;
         srs = new Point(7, 11);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(2.5537, dest.x, 0.0001);
-        Assert.assertEquals(23.2160, dest.y, 0.0001);
+        Assert.assertEquals(2.5537, dest.getX(), 0.0001);
+        Assert.assertEquals(23.2160, dest.getY(), 0.0001);
 
         direction.distance = 23;
         direction.angle = 230;
         srs = new Point(17, 19);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(2.2159, dest.x, 0.0001);
-        Assert.assertEquals(1.3810, dest.y, 0.0001);
+        Assert.assertEquals(2.2159, dest.getX(), 0.0001);
+        Assert.assertEquals(1.3810, dest.getY(), 0.0001);
 
         direction.distance = 3;
         direction.angle = 290;
         srs = new Point(29, 31);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(30.0261, dest.x, 0.0001);
-        Assert.assertEquals(28.1809, dest.y, 0.0001);
+        Assert.assertEquals(30.0261, dest.getX(), 0.0001);
+        Assert.assertEquals(28.1809, dest.getY(), 0.0001);
 
         direction.distance = 10;
         direction.angle = 90;
         srs = new Point(33, 37);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(33.0000, dest.x, 0.0001);
-        Assert.assertEquals(47.0000, dest.y, 0.0001);
+        Assert.assertEquals(33.0000, dest.getX(), 0.0001);
+        Assert.assertEquals(47.0000, dest.getY(), 0.0001);
 
         direction.distance = 10;
         direction.angle = 180;
         srs = new Point(33, 37);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(23.0000, dest.x, 0.0001);
-        Assert.assertEquals(37.0000, dest.y, 0.0001);
+        Assert.assertEquals(23.0000, dest.getX(), 0.0001);
+        Assert.assertEquals(37.0000, dest.getY(), 0.0001);
 
         direction.distance = 10;
         direction.angle = 270;
         srs = new Point(33, 37);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(33.0000, dest.x, 0.0001);
-        Assert.assertEquals(27.0000, dest.y, 0.0001);
+        Assert.assertEquals(33.0000, dest.getX(), 0.0001);
+        Assert.assertEquals(27.0000, dest.getY(), 0.0001);
 
         direction.distance = 10;
         direction.angle = 360;
         srs = new Point(33, 37);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(43.0000, dest.x, 0.0001);
-        Assert.assertEquals(37.0000, dest.y, 0.0001);
+        Assert.assertEquals(43.0000, dest.getX(), 0.0001);
+        Assert.assertEquals(37.0000, dest.getY(), 0.0001);
 
         direction.distance = 10;
         direction.angle = 0;
         srs = new Point(1, 1);
         dest = Methods.forwardTask(srs, direction);
-        Assert.assertEquals(11.0000, dest.x, 0.0001);
-        Assert.assertEquals(1.0000, dest.y, 0.0001);
+        Assert.assertEquals(11.0000, dest.getX(), 0.0001);
+        Assert.assertEquals(1.0000, dest.getY(), 0.0001);
 
     }
 
