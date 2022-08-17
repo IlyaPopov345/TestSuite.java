@@ -2,6 +2,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.IllegalArgumentException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -379,6 +383,14 @@ public class TestSuite {
 
 
         data = Force.FindResultant(first, second);
+    }
+
+    @Test
+    public void task8418test() {
+        List<Integer> expected = Arrays.asList(8, 9, 10, 11,12,13,14,15,16,17);
+        List<Integer> actual = Methods.task8418(8);
+        Assert.assertEquals(expected,actual);
+
     }
 }
 

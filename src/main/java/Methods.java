@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import java.lang.IllegalArgumentException;
 
@@ -382,19 +384,35 @@ public class Methods {
         return f;
     }
 
-    public static LiquidPortion mixLiquids(LiquidPortion first , LiquidPortion second) {
+    public static LiquidPortion mixLiquids(LiquidPortion first, LiquidPortion second) {
 
         LiquidPortion x;
-       x = new LiquidPortion();
+        x = new LiquidPortion();
 
         x.volume = first.volume + second.volume;
-        System.out.println("Объем смеси:" + x.volume+ "L");
+        System.out.println("Объем смеси:" + x.volume + "L");
 
         x.temperature = (first.temperature * first.volume + second.temperature * second.volume) / (first.volume + second.volume);
         System.out.println("Температура смеси:" + x.temperature + "℃");
 
 
         return x;
+    }
+
+    public static List<Integer> task8418(int x) {
+
+        List<Integer> result = new ArrayList<Integer>();
+
+        for (int y = 0;  y< 10; y++) {
+          int  a = x+y;
+            System.out.println(a);
+            System.out.println("---");
+            result.add(a);
+        }
+
+
+
+        return result;
     }
 
 }
